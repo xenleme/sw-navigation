@@ -10,7 +10,8 @@ export default class PersonDetails extends Component {
 
   state = {
     person: null,
-    loading: true
+    loading: true,
+    error: false
   };
 
   componentDidMount() {
@@ -31,6 +32,14 @@ export default class PersonDetails extends Component {
     this.setState({
       person,
       loading: false,
+      error: false
+    });
+  };
+
+  onError = (err) => {
+    this.setState({
+      error: true,
+      loading: false
     });
   };
 
@@ -44,20 +53,24 @@ export default class PersonDetails extends Component {
     this.swapiService
       .getPerson(personId)
       .then(this.onPersonLoaded)
+      .catch(this.onError)
   };
 
   render() {
-    const { person, loading } = this.state;
+    const { person, loading, error } = this.state;
 
     if (!this.state.person) {
       return <span>Select a person from a list</span>;
     }
 
+    const hasData = !(loading || error);
+    const errorMessage = error ? <ErrorIndicator /> : null;
     const spinner = loading ? <Spinner /> : null;
-    const content = !loading ? <PersonView person={person} /> : null;
+    const content = hasData ? <PersonView person={person} /> : null;
 
     return (
       <div className="person-details card">
+        {errorMessage}
         {spinner}
         {content}
       </div>
@@ -78,15 +91,15 @@ const PersonView = ({ person }) => {
           <h4>{name}</h4>
           <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                  <span className="term">Gender</span>
+                  <span className="term">Gender:</span>
                   <span>{gender} </span>
               </li>
               <li className="list-group-item">
-                  <span className="term">Birth Year</span>
+                  <span className="term">Birth Year:</span>
                   <span>{birthYear} </span>
               </li>
               <li className="list-group-item">
-                  <span className="term">Eye Color</span>
+                  <span className="term">Eye Color:</span>
                   <span>{eyeColor} </span>
               </li>
           </ul>
