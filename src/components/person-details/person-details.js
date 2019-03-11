@@ -79,7 +79,8 @@ export default class PersonDetails extends Component {
 };
  
 const PersonView = ({ person }) => {
-  const { id, name, gender, birthYear, eyeColor } = person;
+  const { id, name, gender, birthYear, 
+          eyeColor, hairColor, height, mass } = person;
 
   return (
     <React.Fragment>
@@ -101,6 +102,18 @@ const PersonView = ({ person }) => {
               <li className="list-group-item">
                   <span className="term">Eye Color:</span>
                   <span>{eyeColor} </span>
+              </li>
+              <li className="list-group-item">
+                  <span className="term">Hair Color:</span>
+                  <span>{hairColor} </span>
+              </li>
+              <li className="list-group-item">
+                  <span className="term">Height:</span>
+                  <span>{height} </span>
+              </li>
+              <li className="list-group-item">
+                  <span className="term">Mass:</span>
+                  <span>{mass} </span>
               </li>
           </ul>
       </div>
