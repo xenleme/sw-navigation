@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import Header from '../header';
 import RandomPlanet from '../random-planet';
 import ErrorBoundary from '../error-boundary';
-import Row from "../row/row";
 import ItemDetails, { Record } from "../item-details/item-details";
+import {
+  PersonDetails,
+  PlanetDetails,
+  StarshipDetails,
+  PersonList,
+  PlanetList,
+  StarshipList
+} from '../sw-components';
 
 import SwapiService from "../../services/swapi-service";
 
@@ -34,7 +41,9 @@ export default class App extends Component {
     const { getPerson,
             getStarship,
             getPersonImage,
-            getStarshipImage } = this.swapiService;
+            getStarshipImage,
+            getAllPeople,
+            getAllPlanets } = this.swapiService;
 
     const personDetails = (
       <ItemDetails
@@ -66,9 +75,23 @@ export default class App extends Component {
         <div className="container">
           <Header />
 
-          <Row
-            left={personDetails}
-            right={starshipDetails} />
+          <PersonDetails itemId={11} />
+
+          <PlanetDetails itemId={5} />
+
+          <StarshipDetails itemId={9} />
+
+          <PersonList>
+            { ({name}) => <span>{name}</span> }
+          </PersonList>
+
+          <StarshipList>
+            { ({name}) => <span>{name}</span> }
+          </StarshipList>
+
+          <PlanetList>
+            { ({name}) => <span>{name}</span> }
+          </PlanetList>
         </div>
       </ErrorBoundary>
     );
