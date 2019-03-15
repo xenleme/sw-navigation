@@ -3,6 +3,8 @@ import Header from '../header';
 import RandomPlanet from '../random-planet';
 import ErrorBoundary from '../error-boundary';
 import ItemDetails, { Record } from "../item-details/item-details";
+import { SwapiServiceProvider } from '../swapi-service-context';
+
 import {
   PersonDetails,
   PlanetDetails,
@@ -72,21 +74,23 @@ export default class App extends Component {
 
     return (
       <ErrorBoundary>
-        <div className="container">
-          <Header />
+        <SwapiServiceProvider value={this.swapiService}>
+          <div className="container">
+            <Header />
 
-          <PersonDetails itemId={11} />
+            <PersonDetails itemId={11} />
 
-          <PlanetDetails itemId={5} />
+            <PlanetDetails itemId={5} />
 
-          <StarshipDetails itemId={9} />
+            <StarshipDetails itemId={9} />
 
-          <PersonList />
+            <PersonList />
 
-          <StarshipList />
+            <StarshipList />
 
-          <PlanetList />
-        </div>
+            <PlanetList />
+          </div>
+        </SwapiServiceProvider>
       </ErrorBoundary>
     );
   }
