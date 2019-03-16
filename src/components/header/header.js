@@ -9,14 +9,14 @@ const Header = () => {
       </h3>
       <ul className="d-flex">
         <li>
-            <a href="#">People</a>
-          </li>
-          <li>
-            <a href="#">Planets</a>
-          </li>
-          <li>
-            <a href="#">Starships</a>
-          </li>
+          <a href="#/people">People</a>
+        </li>
+        <li>
+          <a href="#/planets">Planets</a>
+        </li>
+        <li>
+          <a href="#/starships">Starships</a>
+        </li>
       </ul>
     </div>
   );
