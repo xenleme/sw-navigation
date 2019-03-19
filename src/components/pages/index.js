@@ -1,8 +1,8 @@
 import PeoplePage from './people-page';
 import PlanetsPage from './planets-page';
-import StarshipsPage from './people-page';
+import StarshipsPage from './starships-page';
 
-export { 
+export {
   PeoplePage,
   PlanetsPage,
   StarshipsPage
