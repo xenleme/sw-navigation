@@ -30,8 +30,8 @@ export default class App extends Component {
               <Route path="/" 
                      render={() => <h2>welcome to sw navigation!!1</h2>}
                      exact />
-              <Route path="/people" component={PeoplePage} />
-              <Route path="/planets" component={PlanetsPage} />
+              <Route path="/people/:id?" component={PeoplePage} />
+              <Route path="/planets/:id?" component={PlanetsPage} />
               <Route path="/starships" exact component={StarshipsPage} />
               <Route path="/starships/:id" 
                      render={({match}) => {
