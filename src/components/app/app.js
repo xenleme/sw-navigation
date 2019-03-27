@@ -38,7 +38,7 @@ export default class App extends Component {
                           return <StarshipDitails itemId={match.params.id} />
                         }} />
 
-                <Route render={() => <h2>Page not found 🤔</h2>} />        
+                <Route render={() => <h2>Page not found <span role="img" aria-label="thinking face">🤔</span></h2>} />        
               </Switch>
             </div>
           </Router>
