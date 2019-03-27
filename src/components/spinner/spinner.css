@@ -70,7 +70,7 @@
   height: 140px;
   top: 30px;
   left: 30px;
-  border-color: transparent #00bc8c transparent #00bc8c;
+  border-color: transparent #FEEA4E transparent ;
   -webkit-animation: lds-double-ring_reverse 1.5s linear infinite;
   animation: lds-double-ring_reverse 1.5s linear infinite;
 }
