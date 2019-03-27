@@ -1,6 +1,8 @@
 .header {
-  margin-top: .5rem;
-  padding: 10px;
+  background-color: #303030;
+  margin: .5rem 0 .5rem;
+  padding: 10px 10px 0 10px;
+  border-radius: 4px;
 }
 
 .header h3 img {
