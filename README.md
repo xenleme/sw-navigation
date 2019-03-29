@@ -1,7 +1,8 @@
-# starwars navigation
-In this project you can find information about the characters, planets and starships from epic space opera franchise Star Wars.  
+# starwars navigation  
 
-#### This project uses the [SWAPI - The Star Wars API](https://swapi.co/)  
+#### This project built with React and uses [SWAPI - The Star Wars API](https://swapi.co/)  
+
+Here you can find information about the characters, planets and starships from epic space opera franchise Star Wars.
 
 You can clone it or download ZIP and run:
 
