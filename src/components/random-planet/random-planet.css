@@ -21,3 +21,15 @@
 .random-planet .list-group-item .term {
   margin-right: .5rem;
 }
+
+@media (max-width: 425px) {
+  .random-planet .list-group {
+    margin: 0;
+  }
+
+  .random-planet .planet-image {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 1rem;
+  }
+}
